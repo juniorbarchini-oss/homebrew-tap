@@ -8,8 +8,13 @@ changed.
 
 ```bash
 brew tap juniorbarchini-oss/tap
+brew trust --cask juniorbarchini-oss/tap/smarttimearchive
 brew install --cask smarttimearchive
 ```
+
+Homebrew 7 asks you to **trust** anything that comes from a tap that is not the official one before it
+loads it (`Refusing to load cask ... from untrusted tap`). The `brew trust --cask` line trusts just this
+cask; `brew trust juniorbarchini-oss/tap` would trust the whole tap. It is stored in `~/.homebrew/trust.json`.
 
 It installs the official `.pkg` from the project's GitHub release (checked against its SHA-256), so the
 result is the same as double-clicking the installer: the engine, with its own Python, owned by root in
